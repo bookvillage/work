@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% load filters %}
+    <ul>
+        {% for book in datas %}
+            {# 判断id对2的余数，非0为True，0为False #}
+            {% if book.id|mod_num:2 %}
+                <li style="background:gold"><a href="{% url 'book:login' %}">{{ book.btitle }}</a></li>
+            {% else %}
+                <li style="background:red"><a href="{% url 'book:login' %}">{{ book.btitle }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for book in datas %}
+            {# 判断id对3的余数，非0为True，0为False #}
+            {% if book.id|mod_num:3 %}
+                <li style="background:gold">{{ book.btitle }}---{{ book.price|yuan }}</li>
+            {% else %}
+                <li style="background:red">{{ book.btitle }}---{{ book.price|yuan }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

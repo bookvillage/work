@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>书单</title>
+    <style>
+        .a {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .a tr {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .a td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .a th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<h1>显示所有图书</h1>
+<table class="a">
+    <tr>
+        <th>序号</th>
+        <td>书名</td>
+        <td>阅读量</td>
+        <td>评论量</td>
+        <td>出版时间</td>
+        <td>垃圾箱</td>
+        <td>作者</td>
+    </tr>
+    {%for book in books%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    {%for book in list1%}
+    <tr>
+        <th colspan="7">1</th>
+    </tr>
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    {%for book in list2%}
+    <tr>
+        <th colspan="7">2contains</th>
+    </tr>
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    {%for book in list3%}
+    <tr>
+        <th colspan="7">3endswith</th>
+    </tr>
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    {%for book in list4%}
+    <tr>
+        <th colspan="7">4startswith</th>
+    </tr>
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">5isnull</th>
+    </tr>
+    {%for book in list5%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">6 in 范围</th>
+    </tr>
+    {%for book in list6%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">7 gt,lt,gte,lte比较</th>
+    </tr>
+    {%for book in list7%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">8 year时间比较</th>
+    </tr>
+    {%for book in list8%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">9 取反exclude</th>
+    </tr>
+    {%for book in list9%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">10 比较运行符 导入F模块</th>
+    </tr>
+    {%for book in list10%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">11 逻辑运算符 导入Q模块</th>
+    </tr>
+    {%for book in list11%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">12 查询结果排序.order_by()</th>
+    </tr>
+    {%for book in list12%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="7">13 aggregate聚合.count,sum,max,min,avg</th>
+    </tr>
+    <tr>
+        <th colspan="7">图书阅读总和{{list13.bread__sum}}</th>
+    <tr>
+    <tr>
+        <th colspan="7">14 join查询连接查询</th>
+    </tr>
+    {%for book in list14%}
+    <tr>
+        <th>{{book.id}}</th>
+        <td>{{book.btitle}}</td>
+        <td>{{book.bread}}</td>
+        <td>{{book.bcommet}}</td>
+        <td>{{book.bpub_date}}</td>
+        <td>{{book.isDdelet}}</td>
+        <td>{{book.bremack}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+
+</html>

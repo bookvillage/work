@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="/static/js/jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+        $("input[value='提交']").click(function () {
+            var name = $(this).prev().val()
+            $("#con").html(name)
+            $(this).prev().val("")
+            $.ajax({
+                url: '/areainq1',
+                type: 'GET',
+                dataType: 'json',
+                data: {"n":name}
+            }).done(function (data) {
+                console.log(data);
+                var pname = data.context.parent;
+                $("#shang").html(pname);
+                var sname = data.context.son;
+                var str='';
+                for (var index = 0; index < sname.length; index++) 
+                {
+                     str +=  '<li>'+sname[index].aname+'</li>';
+                }
+                $("#xia").html(str)
+
+            }).fail(function () {
+                    alert('请重新输入');
+                });
+        })
+
+    })
+
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>地区查询</title>
+</head>
+
+<body>
+        <label for="dd">请输入需要查询的地区</label>
+        <input type="text" id="dd" name="n" value="" autocomplete="off">
+        <input type="button" value="提交">
+    <hr>
+    <div>
+        当前地区:<span id="con"></span>
+    </div>
+    <hr>
+    <div>
+        上级地:<span id="shang"></span>
+    </div>
+    <hr>
+    <div>
+        下级地: <ul id="xia"></ul>
+    </div>
+
+
+</body>
+
+</html>

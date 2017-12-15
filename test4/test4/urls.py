@@ -1,4 +1,4 @@
-"""test5 URL Configuration
+"""test4 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^book',include('bookvillage.urls',namespace='bookvillage'))
+    url(r'^',include('bookvillage.urls',namespace="book"))
 ]
