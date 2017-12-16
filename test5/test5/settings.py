@@ -22,9 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9+6^zdk)4*+9as-j!)ab#bwm&a*9+git)z&19vrbcn6ft!^5n7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+#INTERNAL_IPS = ('192.168.20.92')
 
 # Application definition
 
@@ -47,6 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    #'UserBasedExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'test5.urls'

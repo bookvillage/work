@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    {% load static from staticfiles %}
+    <img src="../../static/img/timg.jpeg" alt="xiao">
+    <img src="{%static 'img/timg.jpeg'%}" alt="timg">
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513318210696&di=78568e85bceb4bd3628dda17aa64c58d&imgtype=0&src=http%3A%2F%2Fwww.sosoxian.com%2Fuploads%2Fallimg%2F160519%2F1-160519135622-50.jpg"
+        alt="sufei">
+    <img src="{% static 'img/su.jpeg' %}" alt="su">
+    <img src="{% static 'img/timg1.jpeg' %}" alt="jd">
+</body>
+
+</html>
